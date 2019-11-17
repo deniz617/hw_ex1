@@ -12,4 +12,9 @@ void main()
 	{
 		std::cout << "Date2 is bigger" << std::endl;
 	}
+
+	for (int i = 0; i < 100; i++)
+	{
+		std::cout << "Date: " << std::string(date1++) << std::endl;
+	}
 }
