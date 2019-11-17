@@ -116,24 +116,20 @@ Date Date::operator--(int)
 bool Date::operator<(const Date& other) const
 {
 	// return true if this date is before other, false otherwise
-	if (y > other.y)
-	{
-		return false;
+	if (y < other.y) {
+		printf("y\n");
+		return true;
 	}
-	else if (y == other.y)
-	{
-		if (m > other.m)
-		{
-			return false;
-		}
-		else if (m == other.m)
-		{
-			if (d > other.d || d == other.d)
-				return false;
-		}
+	else if (m < other.m && y == other.y) {
+		printf("m\n");
+		return true;
+	}
+	else if (d < other.d && y == other.y && m == other.m) {
+		printf("d\n");
+		return true;
 	}
 
-	return true;
+	return false;
 }
 
 bool Date::operator==(const Date& other) const
@@ -204,6 +200,7 @@ bool operator<=(const Date& d1, const Date& d2)
 
 bool operator>(const Date& d1, const Date& d2)
 {
+	printf_s("what\n");
 	// return true if d1 is after then d2
 	if (d2 < d1)
 		return true;
