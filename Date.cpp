@@ -200,7 +200,6 @@ bool operator<=(const Date& d1, const Date& d2)
 
 bool operator>(const Date& d1, const Date& d2)
 {
-	printf_s("what\n");
 	// return true if d1 is after then d2
 	if (d2 < d1)
 		return true;
